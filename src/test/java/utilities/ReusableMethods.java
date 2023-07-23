@@ -21,6 +21,7 @@ public class ReusableMethods {
         touchAction.press(PointOption.point(xKoordinat, yKoordinat)).release().perform();
         Thread.sleep(bekleme);
     }
+
     public static void ekranAltKaydirma(int xKoordinat,int yKoordinat,int wait,int mxKoordinat,int myKoordinat,int bekleme) throws InterruptedException {
         TouchAction touchAction = new TouchAction<>(Driver.getAndroidDriver());
         touchAction
@@ -42,7 +43,9 @@ public class ReusableMethods {
         AndroidDriver driver = (AndroidDriver)  Driver.getAndroidDriver();
         driver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"" + elementText + "\"))");
         driver.findElementByXPath("//*[@text='" + elementText + "']").click();
+
     }
+
     public static String getScreenshot(String name) throws IOException {
         // naming the screenshot with the current date to avoid duplication
         String date = new SimpleDateFormat("yyyyMMddhhssmm").format(new Date());
